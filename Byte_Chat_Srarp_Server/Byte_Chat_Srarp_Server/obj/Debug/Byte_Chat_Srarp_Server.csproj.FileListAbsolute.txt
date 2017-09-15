@@ -1,0 +1,12 @@
+C:\Users\Kola\Documents\Visual Studio 2015\Projects\Ilya_Learn\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\bin\Debug\Byte_Chat_Srarp_Server.exe.config
+C:\Users\Kola\Documents\Visual Studio 2015\Projects\Ilya_Learn\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\bin\Debug\Byte_Chat_Srarp_Server.exe
+C:\Users\Kola\Documents\Visual Studio 2015\Projects\Ilya_Learn\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\bin\Debug\Byte_Chat_Srarp_Server.pdb
+C:\Users\Kola\Documents\Visual Studio 2015\Projects\Ilya_Learn\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\obj\Debug\Byte_Chat_Srarp_Server.csprojResolveAssemblyReference.cache
+C:\Users\Kola\Documents\Visual Studio 2015\Projects\Ilya_Learn\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\obj\Debug\Byte_Chat_Srarp_Server.exe
+C:\Users\Kola\Documents\Visual Studio 2015\Projects\Ilya_Learn\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\obj\Debug\Byte_Chat_Srarp_Server.pdb
+C:\Users\Kola\Desktop\Byte_Chat_Sharp\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\bin\Debug\Byte_Chat_Srarp_Server.exe.config
+C:\Users\Kola\Desktop\Byte_Chat_Sharp\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\obj\Debug\Byte_Chat_Srarp_Server.exe
+C:\Users\Kola\Desktop\Byte_Chat_Sharp\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\obj\Debug\Byte_Chat_Srarp_Server.pdb
+C:\Users\Kola\Desktop\Byte_Chat_Sharp\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\bin\Debug\Byte_Chat_Srarp_Server.exe
+C:\Users\Kola\Desktop\Byte_Chat_Sharp\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\bin\Debug\Byte_Chat_Srarp_Server.pdb
+C:\Users\Kola\Desktop\Byte_Chat_Sharp\Byte_Chat_Srarp_Server\Byte_Chat_Srarp_Server\obj\Debug\Byte_Chat_Srarp_Server.csprojResolveAssemblyReference.cache
