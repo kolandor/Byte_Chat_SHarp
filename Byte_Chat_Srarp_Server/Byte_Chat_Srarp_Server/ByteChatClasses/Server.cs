@@ -74,8 +74,20 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
                 //prepare end point for binding
                 IPEndPoint localEndPoint = (IPEndPoint)endPoint;
 
+
                 Console.WriteLine("End point binded on Address: " + localEndPoint.Address);
                 Console.WriteLine("End point binded on Port: " + localEndPoint.Port);
+
+
+                Console.WriteLine("Your IP addresses:");
+                IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
+                foreach (IPAddress ip in host.AddressList)
+                {
+                    if (ip.AddressFamily == AddressFamily.InterNetwork)
+                    {
+                        Console.WriteLine("\t " + ip);
+                    }
+                }
 
                 // Create a TCP/IP socket.
                 Socket serverSocket = new Socket(AddressFamily.InterNetwork,

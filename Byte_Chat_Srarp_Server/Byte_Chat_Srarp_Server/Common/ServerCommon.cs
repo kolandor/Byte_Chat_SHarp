@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net;
-using System.Net.Sockets;
 
 namespace Byte_Chat_Srarp_Server.Common
 {
@@ -17,23 +16,8 @@ namespace Byte_Chat_Srarp_Server.Common
                 if (strPort != null)
                 {
                     int port = int.Parse(strPort);
-
-                    IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
-                    IPAddress ipAddress = null;
-
-                    foreach (IPAddress ip in host.AddressList)
-                    {
-                        if (ip.AddressFamily == AddressFamily.InterNetwork)
-                        {
-                            ipAddress = ip;
-                            break;
-                        }
-                    }
-
-                    if(ipAddress == null)
-                        throw new ByteChatException("Local IP Address Not Found!");
-
-                    IPEndPoint endPoint = new IPEndPoint(ipAddress, port);
+                    
+                    IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, port);
                     return endPoint;
                 }
 
