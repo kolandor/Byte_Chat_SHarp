@@ -5,3 +5,8 @@
 *.inf
 *.manifest
 *.cache
+/Byte_Chat_Srarp_Server/Byte_Chat_Srarp_Server/bin/Debug/*
+/Byte_Chat_Srarp_Server/Byte_Chat_Srarp_Server/obj/Debug/*
+/Client Improved/Client/bin/Debug/*
+/Client Improved/Client/obj/Debug/*
+/Byte_Chat_Srarp_Server/.vs/Byte_Chat_Srarp_Server/v14/.suo
