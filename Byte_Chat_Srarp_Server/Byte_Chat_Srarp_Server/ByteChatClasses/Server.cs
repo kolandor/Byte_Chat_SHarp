@@ -28,17 +28,17 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
         {
             try
             {
-                if(endPoint == null)
+                if (endPoint == null)
                     throw new ByteChatException("IP End Point is null", "Start Server: ");
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                
+
                 if (_serverThread != null)
                 {
                     Console.WriteLine("Stop previously launched thread...");
                     _serverThread.Abort();
                     _serverThread = null;
-                    
+
                     lock (_criticalSection)
                     {
                         if (_clients != null)
@@ -115,12 +115,12 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
                         int receivedCount = newClientSocket.Receive(rceivedBytes);
 
                         string messageName = Encoding.UTF8.GetString(rceivedBytes, 0, receivedCount);
-                        
+
                         IClient client = new Client(newClientSocket, _clients, messageName, _criticalSection);
 
                         _clients.Add(client);
 
-                        clientIP = ((IPEndPoint) newClientSocket.RemoteEndPoint).Address.ToString();
+                        clientIP = ((IPEndPoint)newClientSocket.RemoteEndPoint).Address.ToString();
 
                         messageConnectedClient = "Connected: " + client.Name;
                     }
@@ -160,7 +160,7 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
                     {
                         try
                         {
-                            if(!client.Equals(clientNotSend))
+                            if (!client.Equals(clientNotSend))
                                 client.SendMessage(message);
                         }
                         catch (Exception localException)

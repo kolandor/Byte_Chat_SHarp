@@ -35,7 +35,7 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
                 throw new ByteChatException("Critical section is null", "Client constructor: ");
             _criticalSection = criticalSection;
 
-            _clientThread = new Thread(ThreadReceiveMessages) {IsBackground = true};
+            _clientThread = new Thread(ThreadReceiveMessages) { IsBackground = true };
             _clientThread.Start();
         }
 
@@ -54,7 +54,7 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
             {
                 if (_clientSocket != null)
                 {
-                    if(_clientSocket.Connected)
+                    if (_clientSocket.Connected)
                         _clientSocket.Disconnect(false);
                     _clientSocket.Close();
                     _clientSocket.Dispose();
@@ -73,7 +73,7 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
             }
             catch (Exception exception)
             {
-                ErrorLogger.LogConsoleAndFile(exception);
+                DisconnectThisClient(exception);
             }
         }
 
@@ -97,33 +97,45 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
 
                     int receivedCount = _clientSocket.Receive(rceivedBytes);
 
-                    string message = Encoding.UTF8.GetString(rceivedBytes, 0, receivedCount);
-
-                    lock (_criticalSection)
+                    if (receivedCount > 0)
                     {
-                        message = Name + ": " + message;
+                        string message = Encoding.UTF8.GetString(rceivedBytes, 0, receivedCount);
 
-                        Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine(message);
-                        Console.ForegroundColor = CommonConstants.DefaultColor;
+                        lock (_criticalSection)
+                        {
+                            message = Name + ": " + message;
 
-                        Server.SendAll(message);
+                            Console.ForegroundColor = ConsoleColor.Green;
+                            Console.WriteLine(message);
+                            Console.ForegroundColor = CommonConstants.DefaultColor;
+
+                            Server.SendAll(message);
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("Socket disconnected");
                     }
                 }
             }
             catch (Exception exception)
             {
-                //client diconnected or some other socket problem
-                string disconnectMessage = "Disconnected: " + Name;
-
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.WriteLine(disconnectMessage + " [" + exception.Message + "]");
-                Console.ForegroundColor = CommonConstants.DefaultColor;
-
-                Server.SendAll(disconnectMessage, this);
-
-                Disconnect();
+                DisconnectThisClient(exception);
             }
+        }
+
+        private void DisconnectThisClient(Exception exception)
+        {
+            //client diconnected or some other socket problem
+            string disconnectMessage = "Disconnected: " + Name;
+
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine(disconnectMessage + " [" + exception.Message + "]");
+            Console.ForegroundColor = CommonConstants.DefaultColor;
+
+            Server.SendAll(disconnectMessage, this);
+
+            Disconnect();
         }
     }
 }
