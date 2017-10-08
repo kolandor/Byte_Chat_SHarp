@@ -107,7 +107,7 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
 
                             Console.ForegroundColor = ConsoleColor.Green;
                             Console.WriteLine(message);
-                            Console.ForegroundColor = CommonConstants.DefaultColor;
+                            Console.ForegroundColor = CommonConstants.DefaultConsoleColor;
 
                             Server.SendAll(message);
                         }
@@ -131,7 +131,7 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
 
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(disconnectMessage + " [" + exception.Message + "]");
-            Console.ForegroundColor = CommonConstants.DefaultColor;
+            Console.ForegroundColor = CommonConstants.DefaultConsoleColor;
 
             Server.SendAll(disconnectMessage, this);
 

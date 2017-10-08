@@ -31,7 +31,7 @@ namespace Byte_Chat_Srarp_Server.Common
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine(adds + " " + exception.Message);
             LogFile(exception, adds);
-            Console.ForegroundColor = CommonConstants.DefaultColor;
+            Console.ForegroundColor = CommonConstants.DefaultConsoleColor;
         }
     }
 }

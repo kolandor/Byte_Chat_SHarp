@@ -12,7 +12,7 @@ namespace Byte_Chat_Srarp_Server
             {
                 Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("\tWelcome to Byte Chat server C# revision");
-                Console.ForegroundColor = CommonConstants.DefaultColor;
+                Console.ForegroundColor = CommonConstants.DefaultConsoleColor;
                 Server.StartServer(ServerCommon.GetServerEndPoint());
                 Console.ReadKey();
             }

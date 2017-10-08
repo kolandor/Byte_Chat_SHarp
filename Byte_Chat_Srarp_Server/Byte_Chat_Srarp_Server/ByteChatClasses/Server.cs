@@ -50,7 +50,7 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
                 }
 
                 Console.WriteLine("Starting server thread...");
-                Console.ForegroundColor = CommonConstants.DefaultColor;
+                Console.ForegroundColor = CommonConstants.DefaultConsoleColor;
 
                 _serverThread = new Thread(ServerThreadMethod) { IsBackground = true };
                 _serverThread.Start(endPoint);
@@ -77,18 +77,7 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
 
                 Console.WriteLine("End point binded on Address: " + localEndPoint.Address);
                 Console.WriteLine("End point binded on Port: " + localEndPoint.Port);
-
-
-                Console.WriteLine("Your IP addresses:");
-                IPHostEntry host = Dns.GetHostEntry(Dns.GetHostName());
-                foreach (IPAddress ip in host.AddressList)
-                {
-                    if (ip.AddressFamily == AddressFamily.InterNetwork)
-                    {
-                        Console.WriteLine("\t " + ip);
-                    }
-                }
-
+                
                 // Create a TCP/IP socket.
                 Socket serverSocket = new Socket(AddressFamily.InterNetwork,
                     SocketType.Stream, ProtocolType.Tcp);
@@ -96,11 +85,13 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
                 //Binding server socket
                 serverSocket.Bind(localEndPoint);
                 serverSocket.Listen(10);
-                Console.WriteLine("Socket binded.");
+                Console.WriteLine("Server socket binded.");
+
+                ServerCommon.ShowServerIpInfo();
 
                 Console.WriteLine("Start listening...");
 
-                Console.ForegroundColor = CommonConstants.DefaultColor;
+                Console.ForegroundColor = CommonConstants.DefaultConsoleColor;
                 while (true)
                 {
                     Socket newClientSocket = serverSocket.Accept();
@@ -126,7 +117,7 @@ namespace Byte_Chat_Srarp_Server.ByteChatClasses
                     }
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine(messageConnectedClient + " IP: " + clientIP);
-                    Console.ForegroundColor = CommonConstants.DefaultColor;
+                    Console.ForegroundColor = CommonConstants.DefaultConsoleColor;
 
                     SendAll(messageConnectedClient);
                 }
