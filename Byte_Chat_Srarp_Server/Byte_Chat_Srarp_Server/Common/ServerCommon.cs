@@ -94,9 +94,9 @@ namespace Byte_Chat_Srarp_Server.Common
             }
             catch
             {
-                return "Error: Can't get internal IP";
+                return "Error: Can't get external IP";
             }
-            return "Can't get internal IP";
+            return "Can't get external IP";
         }
     }
 }
