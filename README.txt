@@ -13,3 +13,10 @@ Improved Clien
 Code fixes
 Names fixes
 Multi language messages
+
+
+	08.10.17
+
+Fixed: the client is not deleted if the socket accepts messages of zero length
+
+New feature: server show external IP 
