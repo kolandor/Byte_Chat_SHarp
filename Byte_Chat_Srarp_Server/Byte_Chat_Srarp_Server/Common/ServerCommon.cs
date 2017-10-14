@@ -50,7 +50,7 @@ namespace Byte_Chat_Srarp_Server.Common
                 {
                     if (ip.AddressFamily == AddressFamily.InterNetwork)
                     {
-                        Console.WriteLine($"\t  {ip}");
+                        Console.WriteLine($"\t {ip}");
                     }
                 }
 
