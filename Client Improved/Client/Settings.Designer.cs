@@ -84,7 +84,6 @@
             this.label2.Size = new System.Drawing.Size(36, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Port";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // SettingsForm
             // 
@@ -100,7 +99,6 @@
             this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.Text = "Настройки";
-            this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

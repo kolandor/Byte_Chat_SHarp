@@ -20,16 +20,6 @@ namespace Client
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SettingsForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void SaveButtom_Click(object sender, EventArgs e)
         {
             try
@@ -49,11 +39,6 @@ namespace Client
                 errBox.ShowDialog();
             }
             Application.Restart();
-        }
-
-        private void Info_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
